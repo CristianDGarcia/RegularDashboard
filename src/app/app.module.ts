@@ -3,14 +3,33 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NopageFoundComponent } from './nopage-found/nopage-found.component';
+import { AuthModule } from './auth/auth.module';
+import { PagesModule } from './pages/pages.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+const material = [
+  MatFormFieldModule
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NopageFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
+    PagesModule,
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    material
+  ],
+  exports: [
+    material
   ],
   providers: [],
   bootstrap: [AppComponent]
